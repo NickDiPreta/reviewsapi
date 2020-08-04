@@ -480,7 +480,8 @@ The commit message should read: <br>
 
 <br>
 <hr>
-Congratulations, you completed the final homework.
+
+# Congratulations, you completed the final homework.
 
 <img src="https://media.giphy.com/media/lMameLIF8voLu8HxWV/giphy.gif" width="500px">
 
