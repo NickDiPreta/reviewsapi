@@ -476,7 +476,7 @@ The commit message should read: <br>
 
 ## Submission Guidelines
 
-&#10004; Submit your project via [this google form](https://docs.google.com/forms/u/2/d/e/1FAIpQLSfUPnan89JtgRPEbK7GK2yXfUG18y5zzq3szuiXsQ6Md_Julw/viewform).
+&#10004; Submit your project via [this google form](https://docs.google.com/forms/u/2/d/e/1FAIpQLSezWVG8OLr6ZxmRNOwZ6xsoYO5lu_7L1LTWA3X6iclG4iG_Hw/viewform).
 
 <br>
 <hr>
