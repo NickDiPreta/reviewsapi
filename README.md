@@ -17,7 +17,7 @@ Topics: Rails 5 API, CORS, One-to-many associations, React
 
 **A product has many reviews, a review belongs to a product**
 
-### Back End
+### Night One: Back End
 
 * Make Rails server work with resource for Products
 * Make Reviews resource
@@ -26,7 +26,7 @@ Topics: Rails 5 API, CORS, One-to-many associations, React
 * Routing - use **only** and **except** to filter the routes
 * Change the controllers to reflect the changes we have made
 
-### Front End
+### Night Two: Front End
 
 * Make a React frontend that consumes the API
 * The user should be able to see all the product images and click on them
@@ -376,9 +376,7 @@ The commit message should read: <br>
 <br>
 <hr>
 
-
-# Part 2: Second Night
-
+# &#x1F3B8; &#x1F3B6;&#x1F3B9; Part 2: Second Night &#x1F3BC; &#x1F3B8; &#x1F3B8;
 
 ## Configure CORS
 
