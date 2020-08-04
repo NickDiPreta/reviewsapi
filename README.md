@@ -377,7 +377,7 @@ The commit message should read: <br>
 <hr>
 
 
-# HUNGRY FOR MORE?
+# Part 2: Second Night
 
 
 ## Configure CORS
@@ -459,7 +459,7 @@ The commit message should read: <br>
 <hr>
 <br>
 
-# HUNGRY FOR EVEN MORE?
+# HUNGRY FOR MORE?
 
 ## Make an 'admin' app
 
