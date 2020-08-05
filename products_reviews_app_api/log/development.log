@@ -79,3 +79,87 @@ Migrating to AddProductIdToReviews (20200805033953)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "author", "created_at", "updated_at", "product_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "middling product I'd say"], ["author", "Chingy Right Thurr"], ["created_at", "2020-08-05 03:56:13.699469"], ["updated_at", "2020-08-05 03:56:13.699469"], ["product_id", 1]]
   [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-08-05 00:21:03 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nick/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nick/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.5ms | Allocations: 409)
+Completed 200 OK in 14ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 2255)
+
+
+Started GET "/products" for ::1 at 2020-08-05 00:21:08 -0400
+  
+SyntaxError (/Users/nick/Desktop/seir_526/homework/one-to-many-hw/products_reviews_app_api/app/controllers/products_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/products_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/products_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/products" for ::1 at 2020-08-05 00:23:42 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 6.4ms | ActiveRecord: 5.3ms | Allocations: 7031)
+
+
+Started GET "/products/1" for ::1 at 2020-08-05 00:23:51 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:22:in `set_product'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:13:in `show'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 1612)
+
+
+Started POST "/products/1/reviews?review[title]=He!%20Say!%20JUMP&review[content]=Hey%20Say!%20BEST&review[author]=Hey%20Say!%207" for ::1 at 2020-08-05 00:28:54 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"review"=>{"title"=>"He! Say! JUMP", "content"=>"Hey Say! BEST", "author"=>"Hey Say! 7"}, "product_id"=>"1"}
+Completed 422 Unprocessable Entity in 1053ms (Views: 0.2ms | ActiveRecord: 3.4ms | Allocations: 578507)
+
+
+Started POST "/products/1/reviews?review[title]=He!%20Say!%20JUMP&review[content]=Hey%20Say!%20BEST&review[author]=Hey%20Say!%207" for ::1 at 2020-08-05 00:36:18 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"review"=>{"title"=>"He! Say! JUMP", "content"=>"Hey Say! BEST", "author"=>"Hey Say! 7"}, "product_id"=>"1"}
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.0ms | Allocations: 65787)
+
+
+  
+NameError (undefined local variable or method `review' for #<ReviewsController:0x00007fe80727dde0>
+Did you mean?  @review):
+  
+app/controllers/reviews_controller.rb:19:in `create'
+Started POST "/products/1/reviews" for ::1 at 2020-08-05 00:41:28 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"review"=>{"title"=>"Hey! Say! JUMP", "content"=>"Hey Say! BEST", "author"=>"Hey Say! 7"}, "product_id"=>"1"}
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.0ms | Allocations: 61632)
+
+
+  
+NameError (undefined local variable or method `review' for #<ReviewsController:0x00007fe8017c76d0>
+Did you mean?  @review):
+  
+app/controllers/reviews_controller.rb:19:in `create'
+Started POST "/products/1/reviews" for ::1 at 2020-08-05 00:42:40 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"review"=>{"title"=>"Hey! Say! JUMP", "content"=>"Hey Say! BEST", "author"=>"Hey Say! 7"}, "product_id"=>"1"}
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 8.4ms | Allocations: 65867)
+
+
+  
+NameError (undefined local variable or method `review' for #<ReviewsController:0x00007fe803d97108>
+Did you mean?  @review):
+  
+app/controllers/reviews_controller.rb:19:in `create'
+Started POST "/products/1/reviews" for ::1 at 2020-08-05 00:44:30 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"review"=>{"title"=>"Hey! Say! JUMP", "content"=>"Hey Say! BEST", "author"=>"Hey Say! 7"}, "product_id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (1.7ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "content", "author", "created_at", "updated_at", "product_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Hey! Say! JUMP"], ["content", "Hey Say! BEST"], ["author", "Hey Say! 7"], ["created_at", "2020-08-05 04:44:30.161666"], ["updated_at", "2020-08-05 04:44:30.161666"], ["product_id", 1]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Completed 201 Created in 31ms (Views: 0.3ms | ActiveRecord: 11.0ms | Allocations: 12570)
+
+
